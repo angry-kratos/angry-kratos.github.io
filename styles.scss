@@ -1,0 +1,37 @@
+/*-- scss:defaults --*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap');
+
+$body-bg: #faf6ee;          // warm paper, matches the figures
+$body-color: #2b2a27;       // ink
+$link-color: #b5481d;       // darker orange: readable on paper
+$primary: #b5481d;
+$font-family-sans-serif: "Inter", system-ui, sans-serif;
+$font-family-monospace: "JetBrains Mono", ui-monospace, monospace;
+$headings-font-family: "Inter", system-ui, sans-serif;
+$headings-font-weight: 700;
+$font-size-root: 18px;
+$code-bg: #f1ebdf;
+$code-color: #8a3b12;
+$navbar-bg: #faf6ee;
+$navbar-fg: #2b2a27;
+$border-color: #e3dccd;
+$table-border-color: #e3dccd;
+
+/*-- scss:rules --*/
+body { font-family: "Source Serif 4", Georgia, serif; line-height: 1.7; }
+.navbar { border-bottom: 1px solid #e3dccd; }
+.navbar-brand { font-family: "Inter", sans-serif; font-weight: 700; }
+h1.title { letter-spacing: -0.02em; }
+.subtitle { color: #6f6b62; font-style: italic; }
+h2 { margin-top: 2.6rem; padding-bottom: .3rem; border-bottom: 1px solid #e3dccd; letter-spacing: -0.01em; }
+h3 { margin-top: 1.8rem; }
+p code, li code { background: #f1ebdf; padding: .08em .3em; border-radius: 4px; font-size: .86em; }
+div.sourceCode, pre.sourceCode { background: #f3efe6 !important; border: 1px solid #e3dccd; border-radius: 8px; }
+pre code { font-size: .8rem; }
+.katex-display { overflow-x: auto; overflow-y: hidden; padding: .4rem 0; }
+.callout { border-radius: 8px; background: #fbf8f1; }
+figure img, .quarto-figure img { border-radius: 6px; }
+.figure-caption, figcaption { font-family: "Inter", sans-serif; font-size: .84rem; color: #6f6b62; }
+table { font-family: "Inter", sans-serif; font-size: .9rem; font-variant-numeric: tabular-nums; }
+.listing-title { font-family: "Inter", sans-serif; }
+.quarto-title-meta-heading, .quarto-title-meta-contents { font-family: "Inter", sans-serif; }

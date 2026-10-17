@@ -1,0 +1,9 @@
+---
+title: "About"
+---
+
+I'm Akarsh Jha. I build LLM agents in production in Bengaluru, and I write here about LLM systems: inference, serving, training, and the GPU underneath.
+
+Every post follows the same rule: build it from scratch, predict the result, then measure it. The code and raw data behind every number are in [this site's repository](https://github.com/angry-kratos/angry-kratos.github.io).
+
+[GitHub](https://github.com/angry-kratos) · [LinkedIn](#) · [X](#) · [Email](#)

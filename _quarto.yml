@@ -1,0 +1,45 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "*.qmd"
+    - "posts/**/*.qmd"
+
+website:
+  title: "Akarsh Jha"
+  description: "LLM systems, from scratch: measured, not asserted."
+  site-url: "https://angry-kratos.github.io"
+  repo-url: "https://github.com/angry-kratos/angry-kratos.github.io"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Writing
+      - href: about.qmd
+        text: About
+    right:
+      - icon: github
+        href: https://github.com/angry-kratos
+        aria-label: GitHub
+      - icon: rss
+        href: index.xml
+        aria-label: RSS
+  page-footer:
+    center: "© 2026 Akarsh Jha · built with Quarto"
+  open-graph: true
+  twitter-card: true
+
+format:
+  html:
+    theme: [cosmo, styles.scss]
+    toc: true
+    toc-depth: 2
+    toc-title: "On this page"
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+    html-math-method: katex
+    fig-cap-location: bottom
+    tbl-cap-location: bottom
+    reference-location: margin
+    smooth-scroll: true
+    link-external-newwindow: true

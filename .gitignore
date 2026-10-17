@@ -1,0 +1,10 @@
+_site/
+.quarto/
+__pycache__/
+code/**/results/
+*.pyc
+
+/.quarto/
+code/**/fonts/
+
+*.log
