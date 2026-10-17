@@ -30,6 +30,7 @@ website:
 
 format:
   html:
+    include-in-header: _includes/analytics.html
     theme: [cosmo, styles.scss]
     toc: true
     toc-depth: 2
