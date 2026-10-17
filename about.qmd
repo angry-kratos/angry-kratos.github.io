@@ -2,8 +2,14 @@
 title: "About"
 ---
 
-I'm Akarsh Jha. I build LLM agents in production in Bengaluru, and I write here about LLM systems: inference, serving, training, and the GPU underneath.
+I'm Akarsh Jha. I'm interested in understanding AI and machine learning deeply: the mathematics behind the models, how that mathematics becomes code, and what happens when the code meets real hardware and production workloads.
 
-Every post follows the same rule: build it from scratch, predict the result, then measure it. The code and raw data behind every number are in [this site's repository](https://github.com/angry-kratos/angry-kratos.github.io).
+This blog is where I work through those questions. I want to connect derivations and first principles with implementations I can inspect and experiments I can reproduce. That means building things by hand, checking correctness, measuring performance, and investigating the gap between what the theory predicts and what actually happens.
 
-[GitHub](https://github.com/angry-kratos) · [LinkedIn](#) · [X](#) · [Email](#)
+I'll write about the maths behind AI/ML, training and inference, GPU performance, and the engineering of production systems: serving models, managing memory, and making trade-offs around latency, throughput, reliability, and cost. I'll also follow related questions wherever they lead.
+
+I'm learning as I go. These posts are a record of that process, including the mistakes, surprising results, and explanations that still need testing. My aim is to make each experiment clear enough that you can follow the reasoning, run the code, and challenge the conclusion.
+
+You can find the code for these posts in [this site's repository](https://github.com/angry-kratos/angry-kratos.github.io). If you're exploring similar ideas, spot a mistake, or have a question worth testing, I'd love to hear from you.
+
+[GitHub](https://github.com/angry-kratos) · [LinkedIn](https://www.linkedin.com/in/akarsh-jha-b60184282/) · [akarshjah937@gmail.com](mailto:akarshjah937@gmail.com)
