@@ -1,0 +1,19 @@
+/* Shared styles for the post's interactive pieces. Paper palette from figure_style.py. */
+.tm-widget { background:#faf6ee; border:1px solid #e6dfd1; border-radius:10px; padding:14px 16px 12px; margin:1.4rem 0; color:#2b2a27; font-size:15px; }
+.tm-widget svg text { font-family: inherit; }
+.tm-legend { display:flex; flex-wrap:wrap; gap:6px 14px; font-size:13px; color:#55524c; margin-bottom:6px; }
+.tm-legend i { display:inline-block; width:11px; height:11px; border-radius:2px; margin-right:5px; vertical-align:-1px; }
+.tm-readout { font-size:13px; color:#7a776f; margin-top:2px; }
+.tm-caption { min-height:4.8em; margin:6px 0 10px; line-height:1.55; }
+.tm-controls { display:flex; align-items:center; gap:8px; }
+.tm-controls input[type=range] { flex:1; accent-color:#b23a48; }
+.tm-widget button { background:transparent; border:1px solid #c9bfab; border-radius:6px; padding:3px 12px; color:#2b2a27; cursor:pointer; font:inherit; font-size:14px; }
+.tm-widget button:hover { background:#efe8da; }
+.tm-row { display:flex; align-items:center; gap:12px; margin:4px 0; }
+.tm-row label { width:210px; font-size:14px; }
+.tm-row input { flex:1; accent-color:#b23a48; }
+.tm-verdict { font-weight:600; margin:4px 0 2px; }
+.tm-verdict.ok { color:#0f7a54; } .tm-verdict.oom { color:#b23a48; }
+.tm-note { font-size:13.5px; color:#55524c; margin:4px 0 0; line-height:1.5; }
+@media (max-width:600px){ .tm-row{flex-direction:column;align-items:stretch;gap:2px} .tm-row label{width:auto} }
+@media (max-width:600px){ main table { display:block; overflow-x:auto; } }

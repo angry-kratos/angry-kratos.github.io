@@ -1,0 +1,155 @@
+{
+  "event_index": 615,
+  "action": "alloc",
+  "addr": 140085458632704,
+  "size": 1646821376,
+  "stream": 0,
+  "time_us": 1792841348007250,
+  "frames": [
+    {
+      "name": "torch::unwind::unwind()",
+      "filename": "??",
+      "line": 0
+    },
+    {
+      "name": "torch::CapturedTraceback::gather(bool, bool, bool)",
+      "filename": "??",
+      "line": 0
+    },
+    {
+      "name": "torch::cuda::(anonymous namespace)::gather_with_cpp()",
+      "filename": "memory_snapshot.cpp",
+      "line": 0
+    },
+    {
+      "name": "c10::cuda::CUDACachingAllocator::Native::DeviceCachingAllocator::malloc(signed char, unsigned long, CUstream_st*)",
+      "filename": "CUDACachingAllocator.cpp",
+      "line": 0
+    },
+    {
+      "name": "c10::cuda::CUDACachingAllocator::Native::NativeCachingAllocator::malloc(void**, signed char, unsigned long, CUstream_st*)",
+      "filename": "",
+      "line": 0
+    },
+    {
+      "name": "c10::cuda::CUDACachingAllocator::Native::NativeCachingAllocator::allocate(unsigned long)",
+      "filename": "",
+      "line": 0
+    },
+    {
+      "name": "at::TensorBase at::detail::_empty_generic<long>(c10::ArrayRef<long>, c10::Allocator*, c10::DispatchKeySet, c10::ScalarType, std::optional<c10::MemoryFormat>)",
+      "filename": "",
+      "line": 0
+    },
+    {
+      "name": "at::detail::empty_generic(c10::ArrayRef<long>, c10::Allocator*, c10::DispatchKeySet, c10::ScalarType, std::optional<c10::MemoryFormat>)",
+      "filename": "??",
+      "line": 0
+    },
+    {
+      "name": "at::detail::empty_cuda(c10::ArrayRef<long>, c10::ScalarType, std::optional<c10::Device>, std::optional<c10::MemoryFormat>)",
+      "filename": "??",
+      "line": 0
+    },
+    {
+      "name": "at::detail::empty_cuda(c10::ArrayRef<long>, std::optional<c10::ScalarType>, std::optional<c10::Layout>, std::optional<c10::Device>, std::optional<bool>, std::optional<c10::MemoryFormat>)",
+      "filename": "??",
+      "line": 0
+    },
+    {
+      "name": "at::detail::empty_cuda(c10::ArrayRef<long>, c10::TensorOptions const&)",
+      "filename": "??",
+      "line": 0
+    },
+    {
+      "name": "at::(anonymous namespace)::create_out(c10::ArrayRef<long>, c10::ArrayRef<long>, c10::TensorOptions const&)",
+      "filename": "RegisterCUDA.cpp",
+      "line": 0
+    },
+    {
+      "name": "at::(anonymous namespace)::structured_log_softmax_backward_cuda_out_functional::set_output_raw_strided(long, c10::ArrayRef<long>, c10::ArrayRef<long>, c10::TensorOptions, c10::ArrayRef<at::Dimname>)",
+      "filename": "RegisterCUDA.cpp",
+      "line": 0
+    },
+    {
+      "name": "at::meta::structured__log_softmax_backward_data::meta(at::Tensor const&, at::Tensor const&, long, c10::ScalarType)",
+      "filename": "??",
+      "line": 0
+    },
+    {
+      "name": "at::(anonymous namespace)::wrapper_CUDA__log_softmax_backward_data(at::Tensor const&, at::Tensor const&, long, c10::ScalarType)",
+      "filename": "RegisterCUDA.cpp",
+      "line": 0
+    },
+    {
+      "name": "c10::impl::wrap_kernel_functor_unboxed_<c10::impl::detail::WrapFunctionIntoFunctor_<c10::CompileTimeFunctionPointer<at::Tensor (at::Tensor const&, at::Tensor const&, long, c10::ScalarType), &at::(anonymous namespace)::wrapper_CUDA__log_softmax_backward_data>, at::Tensor, c10::guts::typelist::typelist<at::Tensor const&, at::Tensor const&, long, c10::ScalarType> >, at::Tensor (at::Tensor const&, at::Tensor const&, long, c10::ScalarType)>::call(c10::OperatorKernel*, c10::DispatchKeySet, at::Tensor const&, at::Tensor const&, long, c10::ScalarType)",
+      "filename": "RegisterCUDA.cpp",
+      "line": 0
+    },
+    {
+      "name": "at::_ops::_log_softmax_backward_data::redispatch(c10::DispatchKeySet, at::Tensor const&, at::Tensor const&, long, c10::ScalarType)",
+      "filename": "??",
+      "line": 0
+    },
+    {
+      "name": "torch::autograd::VariableType::(anonymous namespace)::_log_softmax_backward_data(c10::DispatchKeySet, at::Tensor const&, at::Tensor const&, long, c10::ScalarType)",
+      "filename": "VariableType_1.cpp",
+      "line": 0
+    },
+    {
+      "name": "c10::impl::wrap_kernel_functor_unboxed_<c10::impl::detail::WrapFunctionIntoFunctor_<c10::CompileTimeFunctionPointer<at::Tensor (c10::DispatchKeySet, at::Tensor const&, at::Tensor const&, long, c10::ScalarType), &torch::autograd::VariableType::(anonymous namespace)::_log_softmax_backward_data>, at::Tensor, c10::guts::typelist::typelist<c10::DispatchKeySet, at::Tensor const&, at::Tensor const&, long, c10::ScalarType> >, at::Tensor (c10::DispatchKeySet, at::Tensor const&, at::Tensor const&, long, c10::ScalarType)>::call(c10::OperatorKernel*, c10::DispatchKeySet, at::Tensor const&, at::Tensor const&, long, c10::ScalarType)",
+      "filename": "VariableType_1.cpp",
+      "line": 0
+    },
+    {
+      "name": "at::_ops::_log_softmax_backward_data::call(at::Tensor const&, at::Tensor const&, long, c10::ScalarType)",
+      "filename": "??",
+      "line": 0
+    },
+    {
+      "name": "torch::autograd::generated::LogSoftmaxBackward0::apply(std::vector<at::Tensor, std::allocator<at::Tensor> >&&)",
+      "filename": "??",
+      "line": 0
+    },
+    {
+      "name": "torch::autograd::Node::operator()(std::vector<at::Tensor, std::allocator<at::Tensor> >&&)",
+      "filename": "",
+      "line": 0
+    },
+    {
+      "name": "torch::autograd::Engine::evaluate_function(std::shared_ptr<torch::autograd::GraphTask>&, torch::autograd::Node*, torch::autograd::InputBuffer&, std::shared_ptr<torch::autograd::ReadyQueue> const&)",
+      "filename": "??",
+      "line": 0
+    },
+    {
+      "name": "torch::autograd::Engine::thread_main(std::shared_ptr<torch::autograd::GraphTask> const&)",
+      "filename": "??",
+      "line": 0
+    },
+    {
+      "name": "torch::autograd::Engine::thread_init(int, std::shared_ptr<torch::autograd::ReadyQueue> const&, bool)",
+      "filename": "??",
+      "line": 0
+    },
+    {
+      "name": "torch::autograd::python::PythonEngine::thread_init(int, std::shared_ptr<torch::autograd::ReadyQueue> const&, bool)",
+      "filename": "??",
+      "line": 0
+    },
+    {
+      "name": "execute_native_thread_routine",
+      "filename": "thread48.o",
+      "line": 0
+    },
+    {
+      "name": "start_thread",
+      "filename": "/build/glibc-B3wQXB/glibc-2.31/nptl/pthread_create.c",
+      "line": 477
+    },
+    {
+      "name": "clone",
+      "filename": "??",
+      "line": 0
+    }
+  ]
+}

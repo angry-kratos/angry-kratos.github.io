@@ -1,0 +1,12 @@
+Recorded 55 points; step 2 loss 10.6529
+True allocator peak: 17053.9 MiB
+Highest hook/checkpoint sample: 13912.9 MiB
+Snapshot events: 2976
+step 2 start: 1494.2 MiB
+logits / before loss: 12369.3 MiB
+after loss: 13912.9 MiB
+after backward: 3543.3 MiB
+after del logits: 1972.8 MiB
+after step(): 1972.8 MiB
+after zero_grad: 1494.2 MiB
+Final unknown requested bytes: 17039360

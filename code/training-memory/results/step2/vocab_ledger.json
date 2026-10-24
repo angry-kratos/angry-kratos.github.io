@@ -1,0 +1,281 @@
+{
+  "method": "Exact fp32 B*T*V payload and model tensor lifetimes; remainder includes allocator slack and other temporaries.",
+  "bytes_per_vocab_tensor": 1646821376,
+  "rows": [
+    {
+      "label": "step 2 start",
+      "vocab_bytes": 0,
+      "layer_and_other_bytes": 0
+    },
+    {
+      "label": "F00 before",
+      "vocab_bytes": 0,
+      "layer_and_other_bytes": 53485568
+    },
+    {
+      "label": "F00 after",
+      "vocab_bytes": 0,
+      "layer_and_other_bytes": 859971584
+    },
+    {
+      "label": "F01 before",
+      "vocab_bytes": 0,
+      "layer_and_other_bytes": 859971584
+    },
+    {
+      "label": "F01 after",
+      "vocab_bytes": 0,
+      "layer_and_other_bytes": 1666457600
+    },
+    {
+      "label": "F02 before",
+      "vocab_bytes": 0,
+      "layer_and_other_bytes": 1666457600
+    },
+    {
+      "label": "F02 after",
+      "vocab_bytes": 0,
+      "layer_and_other_bytes": 2472943616
+    },
+    {
+      "label": "F03 before",
+      "vocab_bytes": 0,
+      "layer_and_other_bytes": 2472943616
+    },
+    {
+      "label": "F03 after",
+      "vocab_bytes": 0,
+      "layer_and_other_bytes": 3279429632
+    },
+    {
+      "label": "F04 before",
+      "vocab_bytes": 0,
+      "layer_and_other_bytes": 3279429632
+    },
+    {
+      "label": "F04 after",
+      "vocab_bytes": 0,
+      "layer_and_other_bytes": 4085915648
+    },
+    {
+      "label": "F05 before",
+      "vocab_bytes": 0,
+      "layer_and_other_bytes": 4085915648
+    },
+    {
+      "label": "F05 after",
+      "vocab_bytes": 0,
+      "layer_and_other_bytes": 4892401664
+    },
+    {
+      "label": "F06 before",
+      "vocab_bytes": 0,
+      "layer_and_other_bytes": 4892401664
+    },
+    {
+      "label": "F06 after",
+      "vocab_bytes": 0,
+      "layer_and_other_bytes": 5698887680
+    },
+    {
+      "label": "F07 before",
+      "vocab_bytes": 0,
+      "layer_and_other_bytes": 5698887680
+    },
+    {
+      "label": "F07 after",
+      "vocab_bytes": 0,
+      "layer_and_other_bytes": 6505373696
+    },
+    {
+      "label": "F08 before",
+      "vocab_bytes": 0,
+      "layer_and_other_bytes": 6505373696
+    },
+    {
+      "label": "F08 after",
+      "vocab_bytes": 0,
+      "layer_and_other_bytes": 7311859712
+    },
+    {
+      "label": "F09 before",
+      "vocab_bytes": 0,
+      "layer_and_other_bytes": 7311859712
+    },
+    {
+      "label": "F09 after",
+      "vocab_bytes": 0,
+      "layer_and_other_bytes": 8118345728
+    },
+    {
+      "label": "F10 before",
+      "vocab_bytes": 0,
+      "layer_and_other_bytes": 8118345728
+    },
+    {
+      "label": "F10 after",
+      "vocab_bytes": 0,
+      "layer_and_other_bytes": 8924831744
+    },
+    {
+      "label": "F11 before",
+      "vocab_bytes": 0,
+      "layer_and_other_bytes": 8924831744
+    },
+    {
+      "label": "F11 after",
+      "vocab_bytes": 0,
+      "layer_and_other_bytes": 9731317760
+    },
+    {
+      "label": "logits / before loss",
+      "vocab_bytes": 1646821376,
+      "layer_and_other_bytes": 9756549120
+    },
+    {
+      "label": "after loss",
+      "vocab_bytes": 3293642752,
+      "layer_and_other_bytes": 9728304128
+    },
+    {
+      "label": "B11 before",
+      "vocab_bytes": 1646821376,
+      "layer_and_other_bytes": 9857396736
+    },
+    {
+      "label": "B11 after",
+      "vocab_bytes": 1646821376,
+      "layer_and_other_bytes": 9076862976
+    },
+    {
+      "label": "B10 before",
+      "vocab_bytes": 1646821376,
+      "layer_and_other_bytes": 9051697152
+    },
+    {
+      "label": "B10 after",
+      "vocab_bytes": 1646821376,
+      "layer_and_other_bytes": 8271543296
+    },
+    {
+      "label": "B09 before",
+      "vocab_bytes": 1646821376,
+      "layer_and_other_bytes": 8246377472
+    },
+    {
+      "label": "B09 after",
+      "vocab_bytes": 1646821376,
+      "layer_and_other_bytes": 7465319424
+    },
+    {
+      "label": "B08 before",
+      "vocab_bytes": 1646821376,
+      "layer_and_other_bytes": 7440153600
+    },
+    {
+      "label": "B08 after",
+      "vocab_bytes": 1646821376,
+      "layer_and_other_bytes": 6659619840
+    },
+    {
+      "label": "B07 before",
+      "vocab_bytes": 1646821376,
+      "layer_and_other_bytes": 6634454016
+    },
+    {
+      "label": "B07 after",
+      "vocab_bytes": 1646821376,
+      "layer_and_other_bytes": 5853133824
+    },
+    {
+      "label": "B06 before",
+      "vocab_bytes": 1646821376,
+      "layer_and_other_bytes": 5827968000
+    },
+    {
+      "label": "B06 after",
+      "vocab_bytes": 1646821376,
+      "layer_and_other_bytes": 5046647808
+    },
+    {
+      "label": "B05 before",
+      "vocab_bytes": 1646821376,
+      "layer_and_other_bytes": 5021481984
+    },
+    {
+      "label": "B05 after",
+      "vocab_bytes": 1646821376,
+      "layer_and_other_bytes": 4240450560
+    },
+    {
+      "label": "B04 before",
+      "vocab_bytes": 1646821376,
+      "layer_and_other_bytes": 4215284736
+    },
+    {
+      "label": "B04 after",
+      "vocab_bytes": 1646821376,
+      "layer_and_other_bytes": 3433964544
+    },
+    {
+      "label": "B03 before",
+      "vocab_bytes": 1646821376,
+      "layer_and_other_bytes": 3408798720
+    },
+    {
+      "label": "B03 after",
+      "vocab_bytes": 1646821376,
+      "layer_and_other_bytes": 2627478528
+    },
+    {
+      "label": "B02 before",
+      "vocab_bytes": 1646821376,
+      "layer_and_other_bytes": 2602312704
+    },
+    {
+      "label": "B02 after",
+      "vocab_bytes": 1646821376,
+      "layer_and_other_bytes": 1821778944
+    },
+    {
+      "label": "B01 before",
+      "vocab_bytes": 1646821376,
+      "layer_and_other_bytes": 1796613120
+    },
+    {
+      "label": "B01 after",
+      "vocab_bytes": 1646821376,
+      "layer_and_other_bytes": 1015292928
+    },
+    {
+      "label": "B00 before",
+      "vocab_bytes": 1646821376,
+      "layer_and_other_bytes": 990127104
+    },
+    {
+      "label": "B00 after",
+      "vocab_bytes": 1646821376,
+      "layer_and_other_bytes": 208806912
+    },
+    {
+      "label": "after backward",
+      "vocab_bytes": 1646821376,
+      "layer_and_other_bytes": 4077056
+    },
+    {
+      "label": "after del logits",
+      "vocab_bytes": 0,
+      "layer_and_other_bytes": 4077056
+    },
+    {
+      "label": "after step()",
+      "vocab_bytes": 0,
+      "layer_and_other_bytes": 4077056
+    },
+    {
+      "label": "after zero_grad",
+      "vocab_bytes": 0,
+      "layer_and_other_bytes": 512
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+memory.total [MiB]
+46068 MiB
+46068 MiB
+46068 MiB

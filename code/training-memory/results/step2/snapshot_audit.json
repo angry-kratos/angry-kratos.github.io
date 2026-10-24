@@ -1,0 +1,19 @@
+{
+  "active_block_bytes": 1566771200,
+  "active_requested_bytes": 1560714308,
+  "ledger_known_payload_bytes": 1543674948,
+  "unknown_active_requested_bytes": 17039360,
+  "unknown_blocks": [
+    {
+      "size": 8519680,
+      "requested_size": 8519680,
+      "frames": []
+    },
+    {
+      "size": 8519680,
+      "requested_size": 8519680,
+      "frames": []
+    }
+  ],
+  "trace_events": 2976
+}

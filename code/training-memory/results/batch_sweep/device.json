@@ -1,0 +1,7 @@
+{
+  "gpu": 1,
+  "uuid": "GPU-ef042fdd-6f2c-df92-79e9-7b2afb81eb16",
+  "name": "NVIDIA A40",
+  "capacity_mib": 46068,
+  "initial_free_mib": 45440
+}

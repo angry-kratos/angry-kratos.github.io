@@ -1,0 +1,5 @@
+batch,status,peak_allocated_MiB,peak_reserved_MiB
+20,OK,40375.273,44948.000
+RESULT_JSON={"batch": 20, "status": "OK", "step": 2, "peak_allocated_bytes": 42336542208, "peak_reserved_bytes": 47131394048}
+
+STDERR:

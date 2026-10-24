@@ -1,0 +1,896 @@
+{
+  "torch": "2.5.1",
+  "cuda": "12.1",
+  "gpu": "NVIDIA A40",
+  "batch": 8,
+  "tokens": 1024,
+  "dtype": "float32",
+  "tf32": false,
+  "step2_loss": 10.65285587310791,
+  "peak_bytes": 17882294784,
+  "baseline_bytes": 1566770688,
+  "points": [
+    [
+      "step 2 start",
+      1494.18896484375
+    ],
+    [
+      "F00 before",
+      1545.19677734375
+    ],
+    [
+      "F00 after",
+      2314.32177734375
+    ],
+    [
+      "F01 before",
+      2314.32177734375
+    ],
+    [
+      "F01 after",
+      3083.44677734375
+    ],
+    [
+      "F02 before",
+      3083.44677734375
+    ],
+    [
+      "F02 after",
+      3852.57177734375
+    ],
+    [
+      "F03 before",
+      3852.57177734375
+    ],
+    [
+      "F03 after",
+      4621.69677734375
+    ],
+    [
+      "F04 before",
+      4621.69677734375
+    ],
+    [
+      "F04 after",
+      5390.82177734375
+    ],
+    [
+      "F05 before",
+      5390.82177734375
+    ],
+    [
+      "F05 after",
+      6159.94677734375
+    ],
+    [
+      "F06 before",
+      6159.94677734375
+    ],
+    [
+      "F06 after",
+      6929.07177734375
+    ],
+    [
+      "F07 before",
+      6929.07177734375
+    ],
+    [
+      "F07 after",
+      7698.19677734375
+    ],
+    [
+      "F08 before",
+      7698.19677734375
+    ],
+    [
+      "F08 after",
+      8467.32177734375
+    ],
+    [
+      "F09 before",
+      8467.32177734375
+    ],
+    [
+      "F09 after",
+      9236.44677734375
+    ],
+    [
+      "F10 before",
+      9236.44677734375
+    ],
+    [
+      "F10 after",
+      10005.57177734375
+    ],
+    [
+      "F11 before",
+      10005.57177734375
+    ],
+    [
+      "F11 after",
+      10774.69677734375
+    ],
+    [
+      "logits / before loss",
+      12369.29052734375
+    ],
+    [
+      "after loss",
+      13912.88525390625
+    ],
+    [
+      "B11 before",
+      12465.47216796875
+    ],
+    [
+      "B11 after",
+      11748.13525390625
+    ],
+    [
+      "B10 before",
+      11724.13525390625
+    ],
+    [
+      "B10 after",
+      11007.16064453125
+    ],
+    [
+      "B09 before",
+      10983.16064453125
+    ],
+    [
+      "B09 after",
+      10265.32373046875
+    ],
+    [
+      "B08 before",
+      10241.32373046875
+    ],
+    [
+      "B08 after",
+      9523.98681640625
+    ],
+    [
+      "B07 before",
+      9499.98681640625
+    ],
+    [
+      "B07 after",
+      8781.89990234375
+    ],
+    [
+      "B06 before",
+      8757.89990234375
+    ],
+    [
+      "B06 after",
+      8039.81298828125
+    ],
+    [
+      "B05 before",
+      8015.81298828125
+    ],
+    [
+      "B05 after",
+      7298.00146484375
+    ],
+    [
+      "B04 before",
+      7274.00146484375
+    ],
+    [
+      "B04 after",
+      6555.91455078125
+    ],
+    [
+      "B03 before",
+      6531.91455078125
+    ],
+    [
+      "B03 after",
+      5813.82763671875
+    ],
+    [
+      "B02 before",
+      5789.82763671875
+    ],
+    [
+      "B02 after",
+      5072.49072265625
+    ],
+    [
+      "B01 before",
+      5048.49072265625
+    ],
+    [
+      "B01 after",
+      4330.40380859375
+    ],
+    [
+      "B00 before",
+      4306.40380859375
+    ],
+    [
+      "B00 after",
+      3588.31689453125
+    ],
+    [
+      "after backward",
+      3543.30859375
+    ],
+    [
+      "after del logits",
+      1972.77734375
+    ],
+    [
+      "after step()",
+      1972.77734375
+    ],
+    [
+      "after zero_grad",
+      1494.189453125
+    ]
+  ],
+  "rows": [
+    {
+      "label": "step 2 start",
+      "allocated": 1566770688,
+      "peak_so_far": 1566770688,
+      "requested": 1560714304,
+      "weights": 497759232,
+      "grads": 0,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 0
+    },
+    {
+      "label": "F00 before",
+      "allocated": 1620256256,
+      "peak_so_far": 1620256256,
+      "requested": 1614199872,
+      "weights": 497759232,
+      "grads": 0,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 53485568
+    },
+    {
+      "label": "F00 after",
+      "allocated": 2426742272,
+      "peak_so_far": 3082036736,
+      "requested": 2420685888,
+      "weights": 497759232,
+      "grads": 0,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 859971584
+    },
+    {
+      "label": "F01 before",
+      "allocated": 2426742272,
+      "peak_so_far": 3082036736,
+      "requested": 2420685888,
+      "weights": 497759232,
+      "grads": 0,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 859971584
+    },
+    {
+      "label": "F01 after",
+      "allocated": 3233228288,
+      "peak_so_far": 3888522752,
+      "requested": 3227171904,
+      "weights": 497759232,
+      "grads": 0,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 1666457600
+    },
+    {
+      "label": "F02 before",
+      "allocated": 3233228288,
+      "peak_so_far": 3888522752,
+      "requested": 3227171904,
+      "weights": 497759232,
+      "grads": 0,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 1666457600
+    },
+    {
+      "label": "F02 after",
+      "allocated": 4039714304,
+      "peak_so_far": 4695008768,
+      "requested": 4033657920,
+      "weights": 497759232,
+      "grads": 0,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 2472943616
+    },
+    {
+      "label": "F03 before",
+      "allocated": 4039714304,
+      "peak_so_far": 4695008768,
+      "requested": 4033657920,
+      "weights": 497759232,
+      "grads": 0,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 2472943616
+    },
+    {
+      "label": "F03 after",
+      "allocated": 4846200320,
+      "peak_so_far": 5501494784,
+      "requested": 4840143936,
+      "weights": 497759232,
+      "grads": 0,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 3279429632
+    },
+    {
+      "label": "F04 before",
+      "allocated": 4846200320,
+      "peak_so_far": 5501494784,
+      "requested": 4840143936,
+      "weights": 497759232,
+      "grads": 0,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 3279429632
+    },
+    {
+      "label": "F04 after",
+      "allocated": 5652686336,
+      "peak_so_far": 6307980800,
+      "requested": 5646629952,
+      "weights": 497759232,
+      "grads": 0,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 4085915648
+    },
+    {
+      "label": "F05 before",
+      "allocated": 5652686336,
+      "peak_so_far": 6307980800,
+      "requested": 5646629952,
+      "weights": 497759232,
+      "grads": 0,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 4085915648
+    },
+    {
+      "label": "F05 after",
+      "allocated": 6459172352,
+      "peak_so_far": 7114466816,
+      "requested": 6453115968,
+      "weights": 497759232,
+      "grads": 0,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 4892401664
+    },
+    {
+      "label": "F06 before",
+      "allocated": 6459172352,
+      "peak_so_far": 7114466816,
+      "requested": 6453115968,
+      "weights": 497759232,
+      "grads": 0,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 4892401664
+    },
+    {
+      "label": "F06 after",
+      "allocated": 7265658368,
+      "peak_so_far": 7920952832,
+      "requested": 7259601984,
+      "weights": 497759232,
+      "grads": 0,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 5698887680
+    },
+    {
+      "label": "F07 before",
+      "allocated": 7265658368,
+      "peak_so_far": 7920952832,
+      "requested": 7259601984,
+      "weights": 497759232,
+      "grads": 0,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 5698887680
+    },
+    {
+      "label": "F07 after",
+      "allocated": 8072144384,
+      "peak_so_far": 8727438848,
+      "requested": 8066088000,
+      "weights": 497759232,
+      "grads": 0,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 6505373696
+    },
+    {
+      "label": "F08 before",
+      "allocated": 8072144384,
+      "peak_so_far": 8727438848,
+      "requested": 8066088000,
+      "weights": 497759232,
+      "grads": 0,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 6505373696
+    },
+    {
+      "label": "F08 after",
+      "allocated": 8878630400,
+      "peak_so_far": 9533924864,
+      "requested": 8872574016,
+      "weights": 497759232,
+      "grads": 0,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 7311859712
+    },
+    {
+      "label": "F09 before",
+      "allocated": 8878630400,
+      "peak_so_far": 9533924864,
+      "requested": 8872574016,
+      "weights": 497759232,
+      "grads": 0,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 7311859712
+    },
+    {
+      "label": "F09 after",
+      "allocated": 9685116416,
+      "peak_so_far": 10340410880,
+      "requested": 9679060032,
+      "weights": 497759232,
+      "grads": 0,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 8118345728
+    },
+    {
+      "label": "F10 before",
+      "allocated": 9685116416,
+      "peak_so_far": 10340410880,
+      "requested": 9679060032,
+      "weights": 497759232,
+      "grads": 0,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 8118345728
+    },
+    {
+      "label": "F10 after",
+      "allocated": 10491602432,
+      "peak_so_far": 11146896896,
+      "requested": 10485546048,
+      "weights": 497759232,
+      "grads": 0,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 8924831744
+    },
+    {
+      "label": "F11 before",
+      "allocated": 10491602432,
+      "peak_so_far": 11146896896,
+      "requested": 10485546048,
+      "weights": 497759232,
+      "grads": 0,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 8924831744
+    },
+    {
+      "label": "F11 after",
+      "allocated": 11298088448,
+      "peak_so_far": 11953382912,
+      "requested": 11292032064,
+      "weights": 497759232,
+      "grads": 0,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 9731317760
+    },
+    {
+      "label": "logits / before loss",
+      "allocated": 12970141184,
+      "peak_so_far": 12970141184,
+      "requested": 12964084800,
+      "weights": 497759232,
+      "grads": 0,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 11403370496
+    },
+    {
+      "label": "after loss",
+      "allocated": 14588717568,
+      "peak_so_far": 14617029120,
+      "requested": 14582660168,
+      "weights": 497759232,
+      "grads": 0,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 13021946880
+    },
+    {
+      "label": "B11 before",
+      "allocated": 13070994944,
+      "peak_so_far": 17882294784,
+      "requested": 13064937544,
+      "weights": 497759232,
+      "grads": 6144,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 11504218112
+    },
+    {
+      "label": "B11 after",
+      "allocated": 12318812672,
+      "peak_so_far": 17882294784,
+      "requested": 12311968840,
+      "weights": 497759232,
+      "grads": 28357632,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 10723684352
+    },
+    {
+      "label": "B10 before",
+      "allocated": 12293646848,
+      "peak_so_far": 17882294784,
+      "requested": 12286803016,
+      "weights": 497759232,
+      "grads": 28357632,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 10698518528
+    },
+    {
+      "label": "B10 after",
+      "allocated": 11541844480,
+      "peak_so_far": 17882294784,
+      "requested": 11533834312,
+      "weights": 497759232,
+      "grads": 56709120,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 9918364672
+    },
+    {
+      "label": "B09 before",
+      "allocated": 11516678656,
+      "peak_so_far": 17882294784,
+      "requested": 11508668488,
+      "weights": 497759232,
+      "grads": 56709120,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 9893198848
+    },
+    {
+      "label": "B09 after",
+      "allocated": 10763972096,
+      "peak_so_far": 17882294784,
+      "requested": 10755699784,
+      "weights": 497759232,
+      "grads": 85060608,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 9112140800
+    },
+    {
+      "label": "B08 before",
+      "allocated": 10738806272,
+      "peak_so_far": 17882294784,
+      "requested": 10730533960,
+      "weights": 497759232,
+      "grads": 85060608,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 9086974976
+    },
+    {
+      "label": "B08 after",
+      "allocated": 9986624000,
+      "peak_so_far": 17882294784,
+      "requested": 9977565256,
+      "weights": 497759232,
+      "grads": 113412096,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 8306441216
+    },
+    {
+      "label": "B07 before",
+      "allocated": 9961458176,
+      "peak_so_far": 17882294784,
+      "requested": 9952399432,
+      "weights": 497759232,
+      "grads": 113412096,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 8281275392
+    },
+    {
+      "label": "B07 after",
+      "allocated": 9208489472,
+      "peak_so_far": 17882294784,
+      "requested": 9199430728,
+      "weights": 497759232,
+      "grads": 141763584,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 7499955200
+    },
+    {
+      "label": "B06 before",
+      "allocated": 9183323648,
+      "peak_so_far": 17882294784,
+      "requested": 9174264904,
+      "weights": 497759232,
+      "grads": 141763584,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 7474789376
+    },
+    {
+      "label": "B06 after",
+      "allocated": 8430354944,
+      "peak_so_far": 17882294784,
+      "requested": 8421296200,
+      "weights": 497759232,
+      "grads": 170115072,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 6693469184
+    },
+    {
+      "label": "B05 before",
+      "allocated": 8405189120,
+      "peak_so_far": 17882294784,
+      "requested": 8396130376,
+      "weights": 497759232,
+      "grads": 170115072,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 6668303360
+    },
+    {
+      "label": "B05 after",
+      "allocated": 7652509184,
+      "peak_so_far": 17882294784,
+      "requested": 7643161672,
+      "weights": 497759232,
+      "grads": 198466560,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 5887271936
+    },
+    {
+      "label": "B04 before",
+      "allocated": 7627343360,
+      "peak_so_far": 17882294784,
+      "requested": 7617995848,
+      "weights": 497759232,
+      "grads": 198466560,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 5862106112
+    },
+    {
+      "label": "B04 after",
+      "allocated": 6874374656,
+      "peak_so_far": 17882294784,
+      "requested": 6865027144,
+      "weights": 497759232,
+      "grads": 226818048,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 5080785920
+    },
+    {
+      "label": "B03 before",
+      "allocated": 6849208832,
+      "peak_so_far": 17882294784,
+      "requested": 6839861320,
+      "weights": 497759232,
+      "grads": 226818048,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 5055620096
+    },
+    {
+      "label": "B03 after",
+      "allocated": 6096240128,
+      "peak_so_far": 17882294784,
+      "requested": 6086892616,
+      "weights": 497759232,
+      "grads": 255169536,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 4274299904
+    },
+    {
+      "label": "B02 before",
+      "allocated": 6071074304,
+      "peak_so_far": 17882294784,
+      "requested": 6061726792,
+      "weights": 497759232,
+      "grads": 255169536,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 4249134080
+    },
+    {
+      "label": "B02 after",
+      "allocated": 5318892032,
+      "peak_so_far": 17882294784,
+      "requested": 5308758088,
+      "weights": 497759232,
+      "grads": 283521024,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 3468600320
+    },
+    {
+      "label": "B01 before",
+      "allocated": 5293726208,
+      "peak_so_far": 17882294784,
+      "requested": 5283592264,
+      "weights": 497759232,
+      "grads": 283521024,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 3443434496
+    },
+    {
+      "label": "B01 after",
+      "allocated": 4540757504,
+      "peak_so_far": 17882294784,
+      "requested": 4530623560,
+      "weights": 497759232,
+      "grads": 311872512,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 2662114304
+    },
+    {
+      "label": "B00 before",
+      "allocated": 4515591680,
+      "peak_so_far": 17882294784,
+      "requested": 4505457736,
+      "weights": 497759232,
+      "grads": 311872512,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 2636948480
+    },
+    {
+      "label": "B00 after",
+      "allocated": 3762622976,
+      "peak_so_far": 17882294784,
+      "requested": 3752489032,
+      "weights": 497759232,
+      "grads": 340224000,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 1855628288
+    },
+    {
+      "label": "after backward",
+      "allocated": 3715428352,
+      "peak_so_far": 17882294784,
+      "requested": 3705294916,
+      "weights": 497759232,
+      "grads": 497759232,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 1650898432
+    },
+    {
+      "label": "after del logits",
+      "allocated": 2068606976,
+      "peak_so_far": 17882294784,
+      "requested": 2058473540,
+      "weights": 497759232,
+      "grads": 497759232,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 4077056
+    },
+    {
+      "label": "after step()",
+      "allocated": 2068606976,
+      "peak_so_far": 17882294784,
+      "requested": 2058473540,
+      "weights": 497759232,
+      "grads": 497759232,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 4077056
+    },
+    {
+      "label": "after zero_grad",
+      "allocated": 1566771200,
+      "peak_so_far": 17882294784,
+      "requested": 1560714308,
+      "weights": 497759232,
+      "grads": 0,
+      "adam": 995518464,
+      "buffers_inputs": 50397248,
+      "persistent_other": 23095744,
+      "residual": 512
+    }
+  ]
+}

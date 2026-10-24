@@ -1,0 +1,162 @@
+"""Profile the second training step without changing model.py or train_memory.py."""
+import argparse
+import csv
+import json
+import pickle
+from pathlib import Path
+
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+import numpy as np
+import torch
+from model import GPT, GPTconfig
+
+MIB = 2**20
+
+
+def storages(tensors):
+    # Count shared/tied weights once, and count only CUDA storage.
+    found = {}
+    for t in tensors:
+        if t is not None and t.is_cuda:
+            s = t.untyped_storage()
+            found[s.data_ptr()] = s.nbytes()
+    return found
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--out', default='results/step2')
+    args = parser.parse_args()
+    out = Path(args.out)
+    out.mkdir(parents=True, exist_ok=True)
+    torch.manual_seed(0)
+    torch.backends.cuda.matmul.allow_tf32 = False
+    torch.backends.cudnn.allow_tf32 = False
+    a = torch.rand((1024, 1024), device='cuda')
+    b = torch.rand_like(a)
+    c = a @ b
+    del a, b, c
+    cfg = GPTconfig()
+    model = GPT(cfg).cuda().train()
+    optimizer = torch.optim.AdamW(model.parameters(), lr=3e-4)
+    batch = torch.randint(0, cfg.vocab_size, (8, 1025), device='cuda')
+    x, y = batch[:, :-1], batch[:, 1:]
+
+    # Complete step 1, so Adam's lazy state and library workspaces exist.
+    optimizer.zero_grad(set_to_none=True)
+    logits, loss = model(x, y)
+    loss.backward()
+    del logits
+    optimizer.step()
+    optimizer.zero_grad(set_to_none=True)
+    del loss
+    torch.cuda.synchronize()
+
+    def ledger():
+        return {
+            'weights': storages(model.parameters()),
+            'grads': storages(p.grad for p in model.parameters()),
+            'adam': storages(v for state in optimizer.state.values()
+                             for v in state.values() if torch.is_tensor(v)),
+            'buffers_inputs': storages([*model.buffers(), batch]),
+        }
+
+    base = ledger()
+    baseline = torch.cuda.memory_allocated()
+    persistent_other = baseline - sum(sum(s.values()) for s in base.values())
+    points, rows, handles = [], [], []
+
+    def mib():
+        return torch.cuda.memory_allocated() / MIB
+
+    def record(label):
+        # Scalars only: do not keep outputs/gradients alive in the hook list.
+        points.append((label, mib()))
+        row = {'label': label, 'allocated': torch.cuda.memory_allocated(),
+               'peak_so_far': torch.cuda.max_memory_allocated(),
+               'requested': torch.cuda.memory_stats()['requested_bytes.all.current']}
+        row.update({k: sum(v.values()) for k, v in ledger().items()})
+        row['persistent_other'] = persistent_other
+        fixed = sum(row[k] for k in ('weights', 'grads', 'adam', 'buffers_inputs', 'persistent_other'))
+        row['residual'] = row['allocated'] - fixed
+        assert row['residual'] >= -4096, (label, row['residual'])
+        rows.append(row)
+
+    for i, block in enumerate(model.transformer.h):
+        handles.append(block.register_forward_pre_hook(lambda m, inp, i=i: record(f'F{i:02d} before')))
+        handles.append(block.register_forward_hook(lambda m, inp, output, i=i: record(f'F{i:02d} after')))
+        handles.append(block.register_full_backward_pre_hook(lambda m, gout, i=i: record(f'B{i:02d} before')))
+        handles.append(block.register_full_backward_hook(lambda m, gin, gout, i=i: record(f'B{i:02d} after')))
+    handles.append(model.lm_head.register_forward_hook(lambda m, inp, output: record('logits / before loss')))
+    torch.cuda.memory._record_memory_history(max_entries=100_000)
+    try:
+        torch.cuda.reset_peak_memory_stats()
+        record('step 2 start')
+        logits, loss = model(x, y)
+        record('after loss')
+        loss_value = loss.item()
+        loss.backward()
+        record('after backward')
+        del logits
+        record('after del logits')
+        optimizer.step()
+        record('after step()')
+        optimizer.zero_grad(set_to_none=True)
+        record('after zero_grad')
+        torch.cuda.synchronize()
+        torch.cuda.memory._dump_snapshot(str(out / 'step2.pickle'))
+    finally:
+        torch.cuda.memory._record_memory_history(enabled=None)
+        for h in handles:
+            h.remove()
+
+    meta = {'torch': torch.__version__, 'cuda': torch.version.cuda,
+            'gpu': torch.cuda.get_device_name(), 'batch': 8, 'tokens': 1024,
+            'dtype': 'float32', 'tf32': False, 'step2_loss': loss_value,
+            'peak_bytes': torch.cuda.max_memory_allocated(), 'baseline_bytes': baseline,
+            'points': points, 'rows': rows}
+    (out / 'step2_memory.json').write_text(json.dumps(meta, indent=2))
+    with (out / 'step2_memory.csv').open('w', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=rows[0].keys())
+        writer.writeheader()
+        writer.writerows(rows)
+
+    # Inspect only the snapshot generated by this process (pickle is not safe for untrusted input).
+    with (out / 'step2.pickle').open('rb') as f:
+        snap = pickle.load(f)
+    known = {}
+    for category, entries in ledger().items():
+        known.update({ptr: category for ptr in entries})
+    known.update({ptr: 'loss_scalar' for ptr in storages([loss])})
+    blocks = [b for s in snap['segments'] if s['device'] == torch.cuda.current_device()
+              for b in s['blocks'] if b['state'] == 'active_allocated']
+    unknown = [b for b in blocks if b['address'] not in known]
+    audit = {'active_block_bytes': sum(b['size'] for b in blocks),
+             'active_requested_bytes': sum(b['requested_size'] for b in blocks),
+             'ledger_known_payload_bytes': sum(sum(s.values()) for s in ledger().values()) + 4,
+             'unknown_active_requested_bytes': sum(b['requested_size'] for b in unknown),
+             'unknown_blocks': [{'size': b['size'], 'requested_size': b['requested_size'],
+                                 'frames': b.get('frames', [])} for b in unknown],
+             'trace_events': len(snap['device_traces'][torch.cuda.current_device()])}
+    assert audit['active_block_bytes'] == rows[-1]['allocated']
+    assert audit['trace_events'] < 100_000, 'History truncated: increase max_entries'
+    (out / 'snapshot_audit.json').write_text(json.dumps(audit, indent=2))
+
+    from plot_step2 import plot
+    plot(meta, out)
+    summary = [f"Recorded {len(rows)} points; step 2 loss {loss_value:.4f}",
+               f"True allocator peak: {meta['peak_bytes']/MIB:.1f} MiB",
+               f"Highest hook/checkpoint sample: {max(r['allocated'] for r in rows)/MIB:.1f} MiB",
+               f"Snapshot events: {audit['trace_events']}"]
+    for r in rows:
+        if not r['label'].startswith(('F', 'B')):
+            summary.append(f"{r['label']}: {r['allocated']/MIB:.1f} MiB")
+    summary.append(f"Final unknown requested bytes: {audit['unknown_active_requested_bytes']}")
+    (out / 'summary.txt').write_text('\n'.join(summary) + '\n')
+    print('\n'.join(summary))
+
+
+if __name__ == '__main__':
+    main()
